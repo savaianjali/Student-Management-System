@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management System</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Student Management System</a>
+  	
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+       <span class="navbar-toggler-icon"></span>
+  </button>
+	
+	<div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link" th:href="@{/students}">Student Management</a></li>
+      </ul>
+    </div>
+</nav>
+<br>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+		<h1 class="text-center">Update Student</h1>
+		<div class="card-body">
+		
+		</div>
+			<form th:action="@{/students/{id} (id=${student.id})}" th:object ="${student}" method="POST">
+				<div class="form-group">
+					<label>Student First Name</label>
+					<input type="text"
+					name="firstName" th:field="*{firstName}" class="form-control" placeholder="Enter the First Name"
+					/>
+				</div>
+				<div class="form-group">
+					<label>Student Last Name</label>
+					<input type="text"
+					name="lastName" th:field="*{lastName}" class="form-control" placeholder="Enter the Last Name"
+					/>
+				</div>
+				<div class="form-group">
+					<label>Student Email</label>
+					<input type="text"
+					name="email" th:field="*{email}" class="form-control" placeholder="Enter the email"
+					/>
+				</div>
+				<div class="box-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				
+				</div>
+				
+				
+			</form>	
+		</div>
+	</div>
+	
+</div>
+
+</body>
+</html>
